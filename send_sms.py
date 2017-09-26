@@ -45,26 +45,6 @@ def create_code(mobile=''):
     return tem
 
 
-# 获取验证码的页面 DEMO
-@app.route('/getsmscode', methods=['GET'])
-def getsmscodeform():
-    return '''<form action="/getsms" method="post">
-        <p><input name="mobile"></p>
-        <p><input name="signname" type="text" value="优蛋"></p>
-        <p><button type="submit">Get Code</button></p>
-        </form>'''
-
-
-# 校验验证码的页面 DEMO
-@app.route('/checkcode', methods=['GET'])
-def checksmscodeform():
-    return '''<form action="/checksms" method="post">
-        <p><input name="mobile"></p>
-        <p><input name="code" type="text"></p>
-        <p><button type="submit">Check Code</button></p>
-        </form>'''
-
-
 # 真正获取验证码的接口
 @app.route('/getsms', methods=['POST'])
 def getsmscode():
